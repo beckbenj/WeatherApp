@@ -1,4 +1,4 @@
-package de.fh.albsig.weather;
+package de.fh.albsig.beckbenjamin86251.weather;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -21,7 +21,8 @@ public class Writetoxml {
 		final Element root = this.document.addElement("weather");
 		final Element data = root.addElement("data");
 
-		data.addElement("City").addText("Current weather in:"+weather.getCity());
+		data.addElement("City")
+				.addText("Current weather in:" + weather.getCity());
 		data.addElement("Region").addText(weather.getRegion());
 		data.addElement("Country").addText(weather.getCountry());
 		data.addElement("Temperature").addText(weather.getTemp() + "°C");
@@ -29,8 +30,13 @@ public class Writetoxml {
 		data.addElement("Humidity").addText(weather.getHumidity() + "%");
 		data.addElement("Chill").addText(weather.getChill() + "°C");
 
-		Files.createFile(Paths.get(path + "Weather"+weather.getCity() + ".xml"));
-		Files.write(Paths.get(path + "Weather"+weather.getCity() + ".xml"),
+		if (Files.notExists(
+				Paths.get(path + "Weather" + weather.getCity() + ".xml"))) {
+			Files.createFile(
+					Paths.get(path + "Weather" + weather.getCity() + ".xml"));
+		}
+
+		Files.write(Paths.get(path + "Weather" + weather.getCity() + ".xml"),
 				this.document.asXML().getBytes(Charset.forName("UTF-8")),
 				StandardOpenOption.TRUNCATE_EXISTING);
 

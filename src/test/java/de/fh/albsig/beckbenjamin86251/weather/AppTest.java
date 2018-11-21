@@ -1,4 +1,4 @@
-package de.fh.albsig.beckbenjamin86251.Weather2;
+package de.fh.albsig.beckbenjamin86251.weather;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

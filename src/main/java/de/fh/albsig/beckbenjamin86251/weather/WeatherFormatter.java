@@ -1,4 +1,4 @@
-package de.fh.albsig.weather;
+package de.fh.albsig.beckbenjamin86251.weather;
 
 import java.io.InputStreamReader;
 import java.io.Reader;

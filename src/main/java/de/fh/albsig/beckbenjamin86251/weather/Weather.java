@@ -1,4 +1,4 @@
-package de.fh.albsig.weather;
+package de.fh.albsig.beckbenjamin86251.weather;
 
 public class Weather {
 	private String city;
